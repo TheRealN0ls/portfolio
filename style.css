@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+html{
+    font-family: "Roboto Slab", serif;
+    background-color: #2b2b2b;
+}
+#linksContainer
+{
+    width: 70%;
+    margin-left: 15%;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+}
+.container-element
+{
+    background-color: #4b4b4b;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.container-element a
+{
+    width: 100%;
+    display: block;
+    color: white;
+    text-decoration: none; 
+    text-align: center;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    font-size: 5vh;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.container-element h1{
+    font-size: large;
+    color: white;
+    padding: 20px;
+}
+
+@media only screen and (min-width: 900px) {
+    #linksContainer
+    {
+        display: grid;
+    }
+}
