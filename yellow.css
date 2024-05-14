@@ -1,0 +1,9 @@
+.yellow{
+    background-color: #FFD319;
+  }
+.content-yellow ,.block a h1 li{
+  color: #FFD319;
+}
+.block a h1 li:hover{
+  color: #ffe883;
+}
