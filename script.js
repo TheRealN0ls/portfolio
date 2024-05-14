@@ -1,17 +1,50 @@
-const links = [
-    { naam: "instagram", link: "https://www.instagram.com/the_real_nols/", color: "#ee2a7b", icon:"fa-brands fa-instagram" },
-    { naam: "steam", link: "https://steamcommunity.com/profiles/76561199086952972/", color: "#1b2838", icon:"fa-brands fa-steam" },
-    { naam: "reddit", link: "https://www.reddit.com/user/Dramgamermurf100000/", color: "#ff6314", icon:"fa-brands fa-reddit"},
-    { naam: "github", link: "https://github.com/TheRealN0ls/portfolio", color: "#0d74e7", icon:"fa-brands fa-github"}
-];
-let html = "";
-links.forEach(element => {
-    html +=
-        `
-        <div class="container-element">
-        <a target="_blank" href="${element.link}" style="background-color: ${element.color}"><i class="${element.icon}"></i></a>
-        <h1>${element.naam}</h1>
-        </div>
-        `;
+let activemenu = "";
+let activecolor = "";
+function show(color) {
+  let colorinset = document.querySelector(`.content-${color}`);
+  if (colorinset) {
+    colorinset.style.top = "0vh";
+    activecolor = color;
+  } else {
+    console.error(`Element with class .content-${color} not found.`);
+  }
+}
+function hide(color){
+  let colorinset = document.querySelector(`.content-${color}`);
+  if (colorinset) {
+    colorinset.style.top = "100vh";
+    activecolor = "";
+  } else {
+    console.error(`Element with class .content-${color} not found.`);
+  }
+}
+document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {
+      if (activecolor === "") {
+      console.log("element is not active");
+      } else{
+        hide(activecolor);
+      }
+  }
 });
-document.getElementById('linksContainer').innerHTML = html;
+function menuopen(soort){
+  let insoort = document.querySelector(`.${soort}`);
+  if (insoort){
+    insoort.style.top = "20vh";
+    activemenu = insoort;
+  }
+  else{
+      console.log(`${soort} kan niet geactiveerd worden`);
+    }
+}
+function menusluiten(soort)
+{
+  let insoort = document.querySelector(`.${soort}`);
+  if (insoort){
+    insoort.style.top = "-100vh";
+    activemenu = "";
+  }
+  else{
+      console.log(`${soort} kan niet geactiveerd worden`);
+    } 
+}
